@@ -21,7 +21,7 @@ html
 					.bordered
 						h3 Challenges
 
-						| Challenges are located below
+						p Challenges are located below
 
 						h4 Crypto challenges
 							ul
@@ -31,14 +31,19 @@ html
 
 				.col
 					.bordered
-						- var totalPoints = 0
+						h3 Your flags
 
-						ul
-							each flag in flags
-								li
-									div
-										| Points: #{(totalPoints += flag.points) - totalPoints}
-										br
-										| #{flag.text}
+						if flags.length > 0
+							- var totalPoints = 0
 
-						p You have #{totalPoints} points
+							ul
+								each flag in flags
+									li
+										div
+											| Points: #{(totalPoints += flag.points) - totalPoints}
+											br
+											| #{flag.text}
+
+							p You have #{totalPoints} points
+						else
+							p You have not found any flags yet!

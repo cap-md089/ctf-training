@@ -10,3 +10,21 @@
 	padding: 10px;
 	border-radius: 0.25rem;
 }
+
+input {
+	margin: 5px;
+}
+
+.flag-form {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+header {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	box-sizing: border-box;
+
+	border-bottom: 2px solid #f6bf22;
+}
