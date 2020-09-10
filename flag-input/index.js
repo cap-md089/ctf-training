@@ -30,7 +30,7 @@ const getFlagsFromCookies = (cookies) => {
 const getFlagInfo = (flags) =>
 	flags.map((flag) => flagInfo[flag]).filter((item) => !!item);
 
-app.use(express.static('downloads'));
+app.use(express.static(join(__dirname, 'downloads')));
 
 app.get('/', (req, res) => {
 	const flags = getFlagInfo(getFlagsFromCookies(req.headers.cookie));
@@ -75,6 +75,10 @@ app.post('/addflag', urlencoded({}), (req, res) => {
 		: getFlagInfo(getFlagsFromCookies(req.headers.cookie));
 
 	res.render('index.pug', { flags, foundNewFlag, flagChecked: true });
+});
+
+app.get('/crypto/:id', (req, res) => {
+	res.render(join(__dirname, '..', 'crypto-' + req.params.id, 'index'));
 });
 
 app.listen(process.env.PORT || 3000);

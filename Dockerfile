@@ -1,8 +1,10 @@
 FROM node:13
 
-WORKDIR /usr/flag-input
+WORKDIR /usr/ctf
 
 ADD . ./
+
+WORKDIR /usr/ctf/flag-input
 
 RUN yarn install
 

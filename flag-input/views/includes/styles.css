@@ -1,0 +1,12 @@
+.col {
+	box-sizing: border-box;
+}
+
+.col .bordered {
+	height: 100%;
+	background: #ffefd5;
+	border: 1px solid #f2e3c9;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 0.25rem;
+}

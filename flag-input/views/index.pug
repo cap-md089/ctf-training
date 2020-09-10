@@ -1,30 +1,44 @@
 doctype html
 html
 	head
-		title Flag input
+		title MD-089 CTF
 
 		include includes/head.pug
 	body
 		.container-xl
 			include includes/header.pug
 
-			div(style="clear:both")
-				- var totalPoints = 0
+			if flagChecked
+				if foundNewFlag
+					.alert.alert-success
+						| You found a flag!
+				else
+					.alert.alert-danger
+						| That flag doesn't work! Try again
 
-				if flagChecked
-					if foundNewFlag
-						div(class="alert alert-success")
-							| You found a flag!
-					else
-						div(class="alert alert-danger")
-							| That flag doesn't work! Try again
+			.row(style="clear:both")
+				.col
+					.bordered
+						h3 Challenges
 
-				ul
-					each flag in flags
-						li
-							div
-								| Points: #{(totalPoints += flag.points) - totalPoints}
-								br
-								| #{flag.text}
+						| Challenges are located below
 
-				p You have #{totalPoints} points
+						h4 Crypto challenges
+							ul
+
+						h4 Local file challenges
+							ul
+
+				.col
+					.bordered
+						- var totalPoints = 0
+
+						ul
+							each flag in flags
+								li
+									div
+										| Points: #{(totalPoints += flag.points) - totalPoints}
+										br
+										| #{flag.text}
+
+						p You have #{totalPoints} points

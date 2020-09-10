@@ -1,7 +1,10 @@
-h1(style="float:left")
-	a(href="/") Flag input
+.row.justify-content-between
+	.col
+		h1(style="float:left")
+			a(href="/") MD-089 CTF
 
-form(style="float:right" action="/addflag" method="POST")
-	input(type="text" name="flag" placeholder="Add a flag")
+	.col
+		form(style="float:right" action="/addflag" method="POST")
+			input(type="text" name="flag" placeholder="Add a flag")
 
-	input(type="submit" name="submit")
+			input(type="submit" name="submit")
