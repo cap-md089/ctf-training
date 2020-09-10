@@ -1,0 +1,30 @@
+doctype html
+html
+	head
+		title Flag input
+
+		include includes/head.pug
+	body
+		.container-xl
+			include includes/header.pug
+
+			div(style="clear:both")
+				- var totalPoints = 0
+
+				if flagChecked
+					if foundNewFlag
+						div(class="alert alert-success")
+							| You found a flag!
+					else
+						div(class="alert alert-danger")
+							| That flag doesn't work! Try again
+
+				ul
+					each flag in flags
+						li
+							div
+								| Points: #{(totalPoints += flag.points) - totalPoints}
+								br
+								| #{flag.text}
+
+				p You have #{totalPoints} points
