@@ -28,3 +28,9 @@ header {
 
 	border-bottom: 2px solid #f6bf22;
 }
+
+span.done {
+	display: inline-block;
+	padding-right: 10px;
+	color: green;
+}

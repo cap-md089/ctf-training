@@ -34,6 +34,7 @@ apt-get install -y build-essential \
 	libxt-dev \
 	ltrace \
 	make \
+	nano \
 	netcat \
 	net-tools \
 	procps \

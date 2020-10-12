@@ -1,0 +1,13 @@
+{
+	"name": "crypto-challenges",
+	"version": "1.0.0",
+	"description": "Represents different crypto challenges",
+	"main": "index.js",
+	"scripts": {},
+	"author": "Andrew Rioux",
+	"license": "GPL-2.0",
+	"devDependencies": {},
+	"dependencies": {
+		"pug": "^3.0.0"
+	}
+}

@@ -1,0 +1,4 @@
+binary-*/out
+forensics-challenges/out
+node_modules
+*/node_modules

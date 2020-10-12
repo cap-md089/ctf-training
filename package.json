@@ -1,0 +1,8 @@
+{
+	"private": true,
+	"workspaces": [
+		"flag-input",
+		"python-challenges",
+		"crypto-challenges"
+	]
+}

@@ -10,7 +10,7 @@ This repository contains the following types of challenges
     A crypto challenge involves some code breaking, and encourages familiarity with different encodings, hashes, and basic cryptography.
 -   Web
     A web challenge includes a web server that has some secret hidden within. The challenge is to gain unauthorized access to different parts of the web server and try to find a secret within.
--   Local executable
+-   Binary exploitation
     A local executable challenge includes downloading and manipulating an executable file to try to encourage it to print out a flag.
 -   Steganography
     A steganography challenge includes downloading a file and finding hidden information within a binary file, such as an image or executable.
@@ -30,4 +30,4 @@ The best way to use these resources is to go into the [resources](./resources) f
 
 The build command is simply `docker build -t ctf:ubuntu19.0 .`. Commands to run the image are located in the Dockerfile. Once running, execute bash in the image with `docker exec -it ctf bash` and change directory into `/pwd`. There, you will be able to work with the files placed in there from the host computer.
 
-This also is the safest way to run the challenges, as no one should be downloading executable files and running them on their own computers. Running them in a VM (e.g., Docker) is the best way to do so.
+This also is the safest way to run the challenges, as no one should be downloading executable files and directly running them on their own computers. Running them in an isolated environment (e.g., Docker, VMs) is the best way to do so.

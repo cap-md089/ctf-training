@@ -1,0 +1,4 @@
+[Desktop Entry]
+Name=MD-089 CTF
+Type=Application
+Exec=x-www-browser "http://localhost"

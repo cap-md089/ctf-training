@@ -21,29 +21,62 @@ html
 					.bordered
 						h3 Challenges
 
-						p Challenges are located below
-
 						h4 Crypto challenges
-							ul
+						p These challenges will require analytics and code breaking
+
+						ul
+							li
+								if rawFlags.includes('ceaser_doesnt_like_salad')
+									span.done Done!
+								a(href="/crypto/0") Crypto challenge 1 - 100 pts
 
 						h4 Local file challenges
-							ul
+						p Each challenge will be a zip file. Inside this zip file will be a briefing and a file that will need to be manipulated to produce a secret
+
+						ul
+							li
+								if rawFlags.includes('0verflowed')
+									span.done Done!
+								a(href="/downloads/binary1.zip") Binary challenge 1 - 500 pts
+							
+							li
+								if rawFlags.includes('embedded')
+									span.done Done!
+								a(href="/downloads/forensics1.zip") Forensics challenge 1 - 100 pts
+
+						h4 Web challenges
+						p Each web page has a vulnerability... can you find it?
+
+						ul
+							li 
+								if rawFlags.includes('take-opsec-classes')
+									span.done Done!
+								a(href="http://localhost:3000/") Web challenge 1 - 100 pts
+
+						h4 Programming challenges
+						p Can you write a program to give you the flag?
+
+						ul
+							li
+								if rawFlags.includes('B@SIC-M@TH')
+									span.done Done!
+								a(href="/python/0") Programming challenge 1 - 100 pts
 
 				.col
 					.bordered
 						h3 Your flags
 
 						if flags.length > 0
-							- var totalPoints = 0
-
 							ul
 								each flag in flags
 									li
 										div
-											| Points: #{(totalPoints += flag.points) - totalPoints}
+											| #{flag.source}
+											br
+											| Points: #{flag.points}
 											br
 											| #{flag.text}
 
-							p You have #{totalPoints} points
+							p You have #{flags.reduce((prev, curr) => prev + curr.points, 0)} points
 						else
 							p You have not found any flags yet!

@@ -1,6 +1,32 @@
 {
 	"test1": {
 		"text": "You got the test flag",
-		"points": 0
+		"points": 0,
+		"source": "?? Dev ??"
+	},
+	"0verflowed": {
+		"text": "Nice! You just caused a binary file to overflow its buffer",
+		"points": 500,
+		"source": "Binary challenge 1"
+	},
+	"ceaser_doesnt_like_salad": {
+		"text": "So it appears it was a Ceaser cipher...",
+		"points": 100,
+		"source": "Crypto challenge 1"
+	},
+	"embedded": {
+		"text": "Luckily, drawing skills aren't needed for hiding secrets",
+		"points": 100,
+		"source": "Forensics challenge 1"
+	},
+	"take-opsec-classes": {
+		"text": "They really need to check up on their password training",
+		"points": 100,
+		"source": "Web challenge 1"
+	},
+	"B@SIC-M@TH": {
+		"text": "I can do math, you can do math, and so can the computer",
+		"points": 100,
+		"source": "Programming challenge 1"
 	}
 }
