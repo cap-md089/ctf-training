@@ -4,7 +4,9 @@ const { urlencoded } = require('body-parser');
 const crypto = require('crypto-challenges');
 const python = require('python-challenges');
 
+const tips = require('./tips.json');
 const flagInfo = require('./flags.json');
+
 const app = express();
 
 app.set('views', 'views');
@@ -39,11 +41,14 @@ const getFlagsFromCookies = (cookies) => {
 const getFlagInfo = (flags) =>
 	flags.map((flag) => flagInfo[flag]).filter((item) => !!item);
 
+const getTip = () => tips[Math.floor(Math.random() * tips.length)];
+
 app.get('/', (req, res) => {
 	const rawFlags = getFlagsFromCookies(req.headers.cookie);
 	const flags = getFlagInfo(rawFlags);
 
 	res.render('index.pug', {
+		tip: getTip(),
 		rawFlags,
 		flags,
 		foundNewFlag: false,
@@ -58,6 +63,7 @@ app.post('/addflag', urlencoded({}), (req, res) => {
 	const newFlag = req.body.flag;
 	if (typeof newFlag !== 'string' || cookieFlags.includes(newFlag)) {
 		return res.render('index.pug', {
+			tip: getTip(),
 			rawFlags: cookieFlags,
 			flags: defaultFlags,
 			foundNewFlag: false,
@@ -76,6 +82,7 @@ app.post('/addflag', urlencoded({}), (req, res) => {
 		: defaultFlags;
 
 	res.render('index.pug', {
+		tip: getTip(),
 		rawFlags: cookieFlags,
 		flags,
 		foundNewFlag,
@@ -91,6 +98,7 @@ app.get('/crypto/:id', (req, res) => {
 		const flags = getFlagInfo(rawFlags);
 
 		res.render('index.pug', {
+			tip: getTip(),
 			rawFlags,
 			flags,
 			foundNewFlag: false,
