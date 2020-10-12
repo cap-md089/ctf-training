@@ -1,5 +1,6 @@
 module.exports = [
 	{
+		name: 'Learning math',
 		startingCode: `# Python has the ability to
 # do some basic math
 #

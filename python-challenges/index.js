@@ -20,8 +20,9 @@ const tmpPromise = (opts) =>
 const writePromise = promisify(write);
 
 const _editor = pug.compileFile(join(__dirname, 'editor.pug'));
-const editor = (starterText, results, flag) =>
+const editor = (name, starterText, results, flag) =>
 	_editor({
+		name,
 		templateText: starterText,
 		results,
 		flag,
@@ -29,7 +30,8 @@ const editor = (starterText, results, flag) =>
 
 module.exports.isValidID = (id) => !!challenges[id];
 
-module.exports.pageForID = (id) => editor(challenges[id].startingCode);
+module.exports.pageForID = (id) =>
+	editor(challenges[id].name, challenges[id].startingCode);
 
 module.exports.executeForID = async (id, code) => {
 	const challenge = challenges[id];
@@ -39,9 +41,9 @@ module.exports.executeForID = async (id, code) => {
 	const doesPass = challenge.verifyOutput(result, code);
 
 	if (doesPass) {
-		return editor(code, result, challenge.flag);
+		return editor(challenge.name, code, result, challenge.flag);
 	} else {
-		return editor(code, result);
+		return editor(challenge.name, code, result);
 	}
 };
 
@@ -97,9 +99,12 @@ module.exports.executeCode = async (code) => {
 module.exports.executeCodeInEditor = async (code) => {
 	const result = await module.exports.executeCode(code);
 
-	return editor(code, result);
+	return editor('Python scratchpad', code, result);
 };
 
 module.exports.pythonResources = express.static(join(__dirname, 'resources'));
 
-module.exports.scratchpad = editor('print("Hello world!")');
+module.exports.scratchpad = editor(
+	'Python scratchpad',
+	'print("Hello world!")'
+);
