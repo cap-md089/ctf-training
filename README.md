@@ -39,3 +39,5 @@ Using this repository requires Docker and Docker Compose to be installed. Once t
 1. Download this repository
 2. Run `docker-compose up` inside the repository
 3. Go to [localhost](http://localhost)
+
+**NOTE:** This repository is meant to be put inside of an Ubuntu Virtual Machine for distribution, inside of a virtual machine that is created for the sole purpose of performing this CTF challenge. As such, `docker-compose.yml` assumes that the Docker images are meant to be run constantly and start whenever the computer starts. If this is undesired, you will need to remove `restart: always` from each of the container definitions in `docker-compose.yml`
