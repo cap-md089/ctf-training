@@ -4,12 +4,12 @@
 		"points": 0,
 		"source": "?? Dev ??"
 	},
-	"0verflowed": {
+	"MlJ6AfXTzQum": {
 		"text": "Nice! You just caused a binary file to overflow its buffer",
 		"points": 500,
 		"source": "Binary challenge 1"
 	},
-	"ceaser_doesnt_like_salad": {
+	"QoFTDnPRQoSf": {
 		"text": "So it appears it was a Ceaser cipher...",
 		"points": 100,
 		"source": "Crypto challenge 1"
@@ -19,14 +19,24 @@
 		"points": 100,
 		"source": "Forensics challenge 1"
 	},
-	"take-opsec-classes": {
+	"ucHRzTrfgwxL": {
 		"text": "They really need to check up on their password training",
 		"points": 100,
 		"source": "Web challenge 1"
 	},
-	"B@SIC-M@TH": {
+	"tafGIGUm4ett": {
 		"text": "I can do math, you can do math, and so can the computer",
 		"points": 100,
 		"source": "Programming challenge 1"
+	},
+	"BPb4s8qu63iH": {
+		"text": "Turns out usernames can contain a lot of information",
+		"points": 100,
+		"source": "Web challenge 2"
+	},
+	"indexing": {
+		"text": "Turns out that numbers can be good stand ins for letters",
+		"points": 100,
+		"source": "Crypto challenge 2"
 	}
 }

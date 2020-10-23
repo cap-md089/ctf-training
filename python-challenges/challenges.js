@@ -14,7 +14,7 @@ print(1 + 2)
 
 # Now, make this code print the
 # result of 9 times 6`,
-		flag: 'B@SIC-M@TH',
+		flag: 'tafGIGUm4ett',
 		verifyOutput: (output, code) => !!output.match(/54/g),
 	},
 ];

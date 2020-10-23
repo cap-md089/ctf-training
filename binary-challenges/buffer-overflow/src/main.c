@@ -7,11 +7,12 @@ static char flag_message_1[] = "Fl";
 static char flag_message_2[] = "ag";
 static char flag_message_3[] = ": ";
 
-static char flag_portion_1[] = "0v";
-static char flag_portion_2[] = "er";
-static char flag_portion_3[] = "fl";
-static char flag_portion_4[] = "ow";
-static char flag_portion_5[] = "ed";
+static char flag_portion_1[] = "Ml";
+static char flag_portion_2[] = "J6";
+static char flag_portion_3[] = "Af";
+static char flag_portion_4[] = "XT";
+static char flag_portion_5[] = "zQ";
+static char flag_portion_6[] = "um";
 
 void segv_handler(int signal)
 {
@@ -24,7 +25,8 @@ void segv_handler(int signal)
 		flag_portion_2,
 		flag_portion_3,
 		flag_portion_4,
-		flag_portion_5);
+		flag_portion_5,
+		flag_portion_6);
 
 	exit(1);
 }

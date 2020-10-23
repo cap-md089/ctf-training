@@ -11,3 +11,9 @@ services:
         ports:
             - '3000:80'
         restart: always
+
+    password-reset-1:
+        build: web-challenges/password-reset-1
+        ports:
+            - '3001:80'
+        restart: always
